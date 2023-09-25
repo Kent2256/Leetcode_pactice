@@ -42,4 +42,45 @@ class Solution(object):
             res_list.append(newInterval)
         return res_list
 
-        
+    def insert(self, intervals, newInterval):
+        """
+        :type intervals: List[List[int]]
+        :type newInterval: List[int]
+        :rtype: List[List[int]]
+        """
+        res = []
+        i = 0
+        n = len(intervals)
+        while i < n and intervals[i][1] < newInterval[0]:
+            res.append(intervals[i])
+            i += 1
+        while i < n and intervals[i][0] <= newInterval[1]:
+            newInterval[0] = min(intervals[i][0], newInterval[0])
+            newInterval[1] = max(intervals[i][1], newInterval[1])
+            i += 1
+        res.append(newInterval)
+        while i < n:
+            res.append(intervals[i])
+            i += 1
+        return res
+    
+    def insert(self, intervals, newInterval):
+        """
+        :type intervals: List[List[int]]
+        :type newInterval: List[int]
+        :rtype: List[List[int]]
+        """
+        ans = []
+        intervals.append(newInterval)
+        intervals.sort()
+        slow, fast = 0, 0
+
+        while slow <= len(intervals)-1:
+            fast, curr = slow, intervals[slow][1]
+            while fast+1 <= len(intervals)-1 and curr >= intervals[fast+1][0]:
+                fast += 1
+                if intervals[fast][1] > curr: curr = intervals[fast][1]
+            ans.append([intervals[slow][0], curr])
+            slow = fast+1
+
+        return ans

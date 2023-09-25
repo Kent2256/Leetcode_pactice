@@ -1,36 +1,28 @@
 class Solution(object):
-    def updateMatrix(self, mat):
+    def updateMatrix(self, matrix):
         """
-        :type mat: List[List[int]]
+        :type matrix: List[List[int]]
         :rtype: List[List[int]]
         """
-        m_len = len(mat)
-        n_len = len(mat[0])
-        def dfs(target,viewed):
-            next_target = []
-            for node in target:
-                if mat[node[0]][node[1]] == 0:
-                    return 0
-                if node[0] != 0:
-                    if [node[0]-1, node[1]] not in viewed:
-                        next_target.append([node[0]-1, node[1]])
-                if node[0] != m_len -1:
-                    if [node[0]+1, node[1]] not in viewed:
-                        next_target.append([node[0]+1, node[1]])
-                if node[1] != 0:
-                    if [node[0], node[1]-1] not in viewed:
-                        next_target.append([node[0], node[1]-1])
-                if node[1] != n_len -1:
-                    if [node[0], node[1]+1] not in viewed:
-                        next_target.append([node[0], node[1]+1])
-            viewed.append(target)
-            return 1 + dfs(next_target,viewed)
-        
-        ans = [[0]*n_len for _ in range(m_len)]
-        for i in range(m_len):
-            for k in range(n_len):
-                ans[i][k] = dfs([[i,k]],[])
-        return ans
+        m = len(matrix)
+        n = len(matrix[0])
+        res = [[0 for _ in range(n)] for _ in range(m)]
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    res[i][j] = 0
+                else:
+                    res[i][j] = self.minDistance(matrix, i, j)
+        return res
+    def minDistance(self, matrix, i, j):
+        m = len(matrix)
+        n = len(matrix[0])
+        res = float('inf')
+        for k in range(m):
+            for l in range(n):
+                if matrix[k][l] == 0:
+                    res = min(res, abs(i-k)+abs(j-l))
+        return res
 
 # [1,0,1,1,0,0,1,0,0,1]
 # [0,1,1,0,1,0,1,0,1,1]
