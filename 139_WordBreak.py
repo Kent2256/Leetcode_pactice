@@ -64,7 +64,6 @@ class Solution:
                 return True
             if i in cache:
                 return cache[i]
-
             cache[i] = False
             for w in wordDict:
                 if s[i:].startswith(w) and dfs(i + len(w), cache):
