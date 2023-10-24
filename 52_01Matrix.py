@@ -1,41 +1,63 @@
-class Solution(object):
-    def updateMatrix(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[List[int]]
-        """
-        m = len(matrix)
-        n = len(matrix[0])
-        res = [[0 for _ in range(n)] for _ in range(m)]
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == 0:
-                    res[i][j] = 0
-                else:
-                    res[i][j] = self.minDistance(matrix, i, j)
-        return res
-    def minDistance(self, matrix, i, j):
-        m = len(matrix)
-        n = len(matrix[0])
-        res = float('inf')
-        for k in range(m):
-            for l in range(n):
-                if matrix[k][l] == 0:
-                    res = min(res, abs(i-k)+abs(j-l))
-        return res
+# class Solution:
+#     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+#         if not mat or not mat[0]:
+#             return []
 
-# [1,0,1,1,0,0,1,0,0,1]
-# [0,1,1,0,1,0,1,0,1,1]
-# [0,0,1,0,1,0,0,1,0,0]
-# [1,0,1,0,1,1,1,1,1,1]
-# [0,1,0,1,1,0,0,0,0,1]
-# [0,0,1,0,1,1,1,0,1,0]
-# [0,1,0,1,0,1,0,0,1,1]
-# [1,0,0,0,1,1,1,1,0,1]
-# [1,1,1,1,1,1,1,0,1,0]
-# [1,1,1,1,0,1,0,0,1,1]]
+#         m, n = len(mat), len(mat[0])
+#         queue = deque()
+#         MAX_VALUE = m * n
+        
+#         # Initialize the queue with all 0s and set cells with 1s to MAX_VALUE.
+#         for i in range(m):
+#             for j in range(n):
+#                 if mat[i][j] == 0:
+#                     queue.append((i, j))
+#                 else:
+#                     mat[i][j] = MAX_VALUE
+        
+#         directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        
+#         while queue:
+#             row, col = queue.popleft()
+#             for dr, dc in directions:
+#                 r, c = row + dr, col + dc
+#                 if 0 <= r < m and 0 <= c < n and mat[r][c] > mat[row][col] + 1:
+#                     queue.append((r, c))
+#                     mat[r][c] = mat[row][col] + 1
+        
+        # return mat
+from collections import deque
+from typing import List
+class Solution:    
+    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+        if not mat or mat[0] == 0:
+            return []
+        rows, cols = len(mat), len(mat[0])
+        queue = deque()
+        _MAX_VALUE = rows * cols
+        print(_MAX_VALUE)
+
+        for i in range(rows):
+            for j in range(cols):
+                if mat[i][j] == 0:
+                    queue.append((i,j))
+                else:
+                    mat[i][j] = _MAX_VALUE
+        print(mat)
+
+        direction = [(1,0),(-1,0),(0,1),(0,-1)]
+        
+        while queue:
+            print(queue)
+            row,col = queue.popleft()
+            for dr, dc in direction:
+                r, c = row + dr, col + dc
+                if 0<= r < rows and 0<= c < cols and mat[r][c] > mat[row][col] + 1:
+                    queue.append((r,c))
+                    mat[r][c] = mat[row][col] + 1
+        return mat 
+
 if __name__ == "__main__":
-    mat=[[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[1,1,1],[0,0,0]]
-    # print(Solution().updateMatrix(mat))
-    if not any(2 in nested_list for nested_list in mat):
-        print("checked")
+    sol = Solution()
+    mat = [[0,0,0],[0,1,0],[1,1,1]]
+    print(sol.updateMatrix(mat))

@@ -12,4 +12,4 @@ if __name__ == '__main__':
     soultion = Solution()
     nums = [2,4,5,6,3]
     target = 11
-    print(Solution.twoSum(nums,target))
+    print(soultion.twoSum(nums,target))
