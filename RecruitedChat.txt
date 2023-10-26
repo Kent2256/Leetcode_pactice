@@ -1,5 +1,10 @@
-Hello Angie, I am Kent Chang from Taiwan. I am a Software Engineer at Quanta Computer and my job is server diagnosis script maintain and develop.
-I have owend the projects for four Cloud Servidce Providers, Google, Meta, MSFT and Amazon. And two special porjects to co-developing the diagnosis with Google and Meta.
+Hello Angie, my name is Kent Chang. Sorry about that I did not mark the role at the booking title. The booking system only have columns of first and last name.
+I am a Software Engineer at Quanta Computer and my job is server diagnosis script maintain and develop. I started at this Company in April 2022
+I have owend the projects for four Cloud Servidce Providers, Google, Meta, MSFT and Amazon. And there are two special porjects to co-developing the diagnosis with Google and Meta.
 The co-developing project with google is based on ocp structure, which is methioned on the prefered qualifications.
 
 
+Question:
+1.  I check the CakeResume and it shows that this job opportunity has been opend about 4 mounths.
+    It means that no one get this offer or you keep hiring new empolyments.
+2.  Mainly task for this role is to develop and maintain server bios?

@@ -1,11 +1,9 @@
-res = []
-for k in range(10, -1 ,-1):
-    res.append(k)
-print(res)
+class test():
+    timeout = 10
+    def show_time(self):
+        print(self.timeout)
+        pass
 
-res2 = []
-for l in range(10):
-    res2.append(l)
-print(res2)
-
-
+if __name__ == '__main__':
+    tt = test()
+    tt.show_time()
