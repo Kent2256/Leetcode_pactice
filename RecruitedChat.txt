@@ -3,8 +3,18 @@ I am a Software Engineer at Quanta Computer and my job is server diagnosis scrip
 I have owend the projects for four Cloud Servidce Providers, Google, Meta, MSFT and Amazon. And there are two special porjects to co-developing the diagnosis with Google and Meta.
 The co-developing project with google is based on ocp structure, which is methioned on the prefered qualifications.
 
+Three points of Kent.Chang to get this offer,Fast learner, Quick problem solving, Communicative.
+For the first point, I spent 6 months finishing the training and was required to have business trip to support FAI(First Article Inspection) build, while it normally took 1 year for a freshman to finish training. 
+Second, I reduce the developing time from 10 days to 5 days for a whole rack diagnosis by 24-hours team cooperation.
+We finish the shipping goal a week ahead of schedule in the end. 
+Last but not least, With good communication skills, I often be asked to support other projects. 
+I have owned 9 projects with four different accounts(Google, Amazon, Meta and MSFT).
 
 Question:
 1.  I check the CakeResume and it shows that this job opportunity has been opend about 4 mounths.
     It means that no one get this offer or you keep hiring new empolyments.
 2.  Mainly task for this role is to develop and maintain server bios?
+
+Key word:
+build, priority, excited , be eager to do sth, Open-minded, Facilitate(v)(help),
+Detail-oriented, Collaborate, resolve. initiate
