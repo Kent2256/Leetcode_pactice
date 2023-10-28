@@ -1,5 +1,5 @@
 Hello Angie, I am Kent Chang from Taiwan. I am a Software Engineer at Quanta Computer and my job is server diagnosis script maintain and develop.
 I have owend the projects for four Cloud Servidce Providers, Google, Meta, MSFT and Amazon. And two special porjects to co-developing the diagnosis with Google and Meta.
-The co-developing project with google is based on ocp structure, which is methioned on the prefered qualifications.
+The co-developing project with google is based on ocp structure, which is mentioned on the prefered qualifications.
 
 
