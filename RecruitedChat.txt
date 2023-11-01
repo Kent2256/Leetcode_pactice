@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+Hello Angie, I am Kent Chang from Taiwan. I am a Software Engineer at Quanta Computer and my job is server diagnosis script maintain and develop.
+I have owend the projects for four Cloud Servidce Providers, Google, Meta, MSFT and Amazon. And two special porjects to co-developing the diagnosis with Google and Meta.
+The co-developing project with google is based on ocp structure, which is mentioned on the prefered qualifications.
+=======
 Hello Angie, my name is Kent Chang. Sorry about that I did not mark the role at the booking title. The booking system only have columns of first and last name.
 I am a Software Engineer at Quanta Computer and my job is server diagnosis script maintain and develop. I started at this Company in April 2022
 I have owend the projects for four Cloud Servidce Providers, Google, Meta, MSFT and Amazon. And there are two special porjects to co-developing the diagnosis with Google and Meta.
 The co-developing project with google is based on ocp structure, which is methioned on the prefered qualifications.
+>>>>>>> 895963042fc2457417608d7a54f36f8745361323
 
 Three points of Kent.Chang to get this offer,Fast learner, Quick problem solving, Communicative.
 For the first point, I spent 6 months finishing the training and was required to have business trip to support FAI(First Article Inspection) build, while it normally took 1 year for a freshman to finish training. 
