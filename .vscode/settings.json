@@ -63,6 +63,9 @@
     "cstdlib": "cpp",
     "random": "cpp",
     "limits": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "new": "cpp",
+    "vector": "cpp",
+    "deque": "cpp"
   }
 }

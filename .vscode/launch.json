@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/CodePractice/Leetcode_pactice/C++/206_ReverseLinkList",
-      "program": "c:/CodePractice/Leetcode_pactice/C++/206_ReverseLinkList/build/Debug/outDebug",
+      "cwd": "c:/CodePractice/Leetcode_pactice/C++/143_Reorderlist",
+      "program": "c:/CodePractice/Leetcode_pactice/C++/143_Reorderlist/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
