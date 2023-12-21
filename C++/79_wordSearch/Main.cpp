@@ -69,3 +69,33 @@ public:
         return false;
     }
 };
+
+
+
+class Solution {
+public:
+    bool dfs(vector<vector<char>>& board, string word,int row,int col,int index){
+        if(index == word.length())return true;
+        if( row < 0 || row >= board.size() || col < 0 || col >= board[0].size() || board[row][col] == '#')return false;
+        if(board[row][col] != word[index]) return false;
+        board[row][col] = '#';
+        if( dfs(board,word,row+1,col,index+1) ||
+            dfs(board,word,row,col+1,index+1) ||
+            dfs(board,word,row-1,col,index+1) ||
+            dfs(board,word,row,col-1,index+1)) return true;
+        board[row][col] = word[index];
+        return false;
+    }
+
+    bool exist(vector<vector<char>>& board, string word) {
+        int m = board.size(), n = board[0].size();
+        for(int i =0;i<m;i++){
+            for(int k=0;k<n;k++){
+                if(board[i][k] == word[0]){
+                    if(dfs(board,word,i,k,0)) return true;
+                }
+            }
+        }
+        return false;
+    }
+};
