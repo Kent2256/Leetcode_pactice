@@ -69,17 +69,18 @@ public:
 class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-        maxqueue q;
-        int m = nums.size();
         vector<int> res;
-        for(int i=0;i < k;i++)q.push(nums[i]);
-        res.push_back(q.getMax());
-        int r = k;
-        while(r < m){
-            q.pop();
-            q.push(nums[r]);
-            res.push_back(q.getMax());
-            r++;
+        priority_queue<int> q;
+        for(int i=0;i<k;i++){
+            while(!q.empty() && nums[i] > q.top())q.pop();
+            q.push(nums[i]);
+        }
+        res.push_back(q.top());
+        for(int i=k;i < nums.size();i++){
+            if(nums[i-k] == q.top())q.pop();
+            while(!q.empty() && nums[i] > q.top())q.pop();
+            q.push(nums[i]);
+            res.push_back(q.top());
         }
         return res;
     }
@@ -93,3 +94,28 @@ int main(){
     for( auto i: res) cout << i << ",";
     cout << endl;
 }
+
+
+class Solution {
+public:
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        deque<int>q;
+        int i=0,j=0;
+        vector<int>sol;
+        while(j < nums.size()) {
+            while(!q.empty() && q.back()<nums[j]) {
+                q.pop_back();
+            }
+            q.push_back(nums[j]);
+            if(j-i+1==k) {
+                sol.push_back(q.front());
+                if(nums[i]==q.front()) {
+                    q.pop_front();
+                }
+                i++;
+            }
+            j++;
+        }
+        return sol;
+    }
+};

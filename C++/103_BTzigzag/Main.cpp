@@ -43,26 +43,30 @@ public:
         if(!root) return {};
         vector<vector<int>> result;
         vector<int> sub;
-        stack<TreeNode*> st;
-        st.push(root);
+        vector<TreeNode*> st;
+        vector<TreeNode*> st_next;
+        st.push_back(root);
         int dir =0;
         while(!st.empty()){
             sub.clear();
             int n = st.size();
             for(int i=0;i<n;i++){
-                sub.push_back(st.top()->val);
+                TreeNode* temp = st.back();
+                st.pop_back();
+                sub.push_back(temp->val);
                 if(dir == 0){
-                    if(st.top()->left) st.push(st.top()->left);
-                    if(st.top()->right) st.push(st.top()->right);
+                    if(temp->left) st_next.push_back(temp->left);
+                    if(temp->right) st_next.push_back(temp->right);
                 }
                 else{
-                    if(st.top()->right) st.push(st.top()->right);
-                    if(st.top()->left) st.push(st.top()->left);
+                    if(temp->right) st_next.push_back(temp->right);
+                    if(temp->left) st_next.push_back(temp->left);
                 }
-                st.pop();
             }
             ++dir%=2;
             result.push_back(sub);
+            st=st_next;
+            st_next.clear();
         }
         return result;
     }

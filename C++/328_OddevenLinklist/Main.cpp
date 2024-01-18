@@ -52,3 +52,19 @@ public:
         return head;
     }
 };
+
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if(!head||!head->next) return head;
+        ListNode* event=head->next,*evenh=head->next,*odd=head;
+        while(event&&event->next){
+            odd->next=event->next;
+            odd=odd->next;
+            event->next=odd->next;
+            odd->next=evenh;
+            event=event->next;
+        }
+        return head;
+    }
+};
